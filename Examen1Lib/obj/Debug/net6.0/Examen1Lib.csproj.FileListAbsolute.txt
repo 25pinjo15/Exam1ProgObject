@@ -1,0 +1,12 @@
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\Examen1Lib.csproj.AssemblyReference.cache
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\Examen1Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\Examen1Lib.AssemblyInfoInputs.cache
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\Examen1Lib.AssemblyInfo.cs
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\Examen1Lib.csproj.CoreCompileInputs.cache
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\bin\Debug\net6.0\Examen1Lib.deps.json
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\bin\Debug\net6.0\Examen1Lib.dll
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\bin\Debug\net6.0\Examen1Lib.pdb
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\Examen1Lib.dll
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\refint\Examen1Lib.dll
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\Examen1Lib.pdb
+C:\Users\johny\Documents\SourceTree\Prog orienter object\Examen1_2217536\Examen1Lib\obj\Debug\net6.0\ref\Examen1Lib.dll
