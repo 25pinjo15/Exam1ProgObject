@@ -4,8 +4,6 @@ using Examen1Lib;
 
 namespace Examen1App
 {
-
-
     class Program
     {
         static void Main()
@@ -31,10 +29,10 @@ namespace Examen1App
             switch (Console.ReadLine()) // Read input and case it or reject it
             {
                 case "1": // If 1 is entered, will point to the number 1 program
-                    Game1();
+                    Test();
                     return true;
                 case "2": // If 2 is entered, will point to the number 2 program
-                    Game2();
+                    Player();
                     return true;
 
                 case "quit": // Will return false to Main so it stop the prog
@@ -50,18 +48,37 @@ namespace Examen1App
 
         // Function for the number one problem
         // Should consider each input check if its good. take in mind the number of student over the average and ect ... 
-        private static void Game1()
+        private static void Test()
         {
             Console.Clear();
-            Song song1 = new Song("ayayaya j'ai mal ", "johny pineault", 70);
+            Song song1 = new Song("ayayaya j'ai mal ", "johny pineault", 9);
+            Song song2 = new Song("j'ai encore mal","johny pineault", 75);
             Console.WriteLine(song1.Minute);
             Console.WriteLine(song1);
+
+            Playlist superDuperList = new Playlist("The supper dupper list");
+            Playlist superDuperList2 = new Playlist("The empty one ");
+            Console.WriteLine(superDuperList.Name);
+            Console.WriteLine("ITS THe end");
+            superDuperList.Songlist.Add(song1);
+
+            Console.WriteLine("list display");
+            Console.WriteLine(superDuperList);
+            Console.WriteLine(superDuperList2);
+            Console.WriteLine(superDuperList.Count);
+            superDuperList.Songlist.Add(song2);
+            Console.WriteLine(superDuperList.Count);
+            Console.WriteLine(superDuperList.ToString());
+            Console.WriteLine($"the total lengt of list 1 is {superDuperList.TotalLenght} second(s)");
+            
+            
             EndOfFunction();
         }
 
-        private static void Game2()
+        private static void Player()
         {
             
+            EndOfFunction();
         }
 
         public static int UserNumberInput(string texte = "")

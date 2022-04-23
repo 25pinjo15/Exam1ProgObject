@@ -100,6 +100,10 @@ public class Song
     {
         int tmpSecond = Second % 60;
         int tmpMinute = Second / 60;
-        return $"{Id}: {Title} ({Artist}) {tmpMinute}:{tmpSecond}";
+        TimeSpan totalTime = new TimeSpan(0,tmpMinute, tmpSecond);
+        string formattedTimeSpan = string.Format("{0:D2}:{1:D2}", totalTime.Minutes, totalTime.Seconds);
+        
+        
+        return $"{Id}: {Title} ({Artist}) {formattedTimeSpan}";
     }
 }
