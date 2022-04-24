@@ -41,7 +41,7 @@ public class Playlist
         get
         {
             int tmp = 0;
-            foreach (Song song in Songlist)
+            foreach (Song? song in Songlist)
             {
 
                 tmp += song.Second;
@@ -50,7 +50,20 @@ public class Playlist
         }
        
     }
-    public List<Song> Songlist = new List<Song>();
+
+    public string TotalLenghtFormated
+    {
+        get
+        {
+            int tmpSecond = TotalLenght % 60;
+            int tmpMinute = TotalLenght / 60;
+            TimeSpan totalListTime = new TimeSpan(0, tmpMinute, tmpSecond);
+            string formattedTimeSpanList = string.Format("{0:D2}:{1:D2}", totalListTime.Minutes, totalListTime.Seconds);
+            return formattedTimeSpanList;
+        }
+    }
+
+    public List<Song?> Songlist = new List<Song?>();
 
     // ---- Constructor ----
     public Playlist(string name)
@@ -58,8 +71,6 @@ public class Playlist
         Id = NextId;
         NextId++;
         Name = name;
-        List<Song> songlist = Songlist;
-        
     }
 
 // ---- Override ----
@@ -80,10 +91,12 @@ public class Playlist
         string tmp2 = "";
         if (Songlist.Count > 0)
         {
-            foreach (Song song in Songlist)
+            int tmpI = 1;
+            foreach (Song? song in Songlist)
             {
                 
-                tmp2 = tmp2 + ($"{song}\n");
+                tmp2 += ($"({tmpI}) = {song}\n");
+                tmpI++;
                 //return tmp;
             }
         }
