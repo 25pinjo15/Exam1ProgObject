@@ -21,8 +21,8 @@ namespace Examen1App
         private static Playlist _list1;
         private static Playlist _list2;
         private static Playlist _list3;
-       
-        
+      
+
         public static void DataSetup(){
             _song1 = new Song("Ayayaya j'ai mal ", "Johny Pineault", 9);
             _song2 = new Song("J'ai encore mal","Johny Pineault", 75);
@@ -53,6 +53,9 @@ namespace Examen1App
             _list3.Songlist.Add(_song10);
             _list3.Songlist.Add(_song11);
             _list3.Songlist.Add(_song12);
+
+            
+
         }
         
         
@@ -121,7 +124,7 @@ namespace Examen1App
                               "|Hello enter a choice or type (main) to   |\n" +
                               "|exit to the main menu or (quit) to end   |\n" +
                               "*******************************************");
-            Console.WriteLine($"{_list1.Id}: {_list1.Name} which contain : {_list1.Count} song(s)!");
+            Console.WriteLine($"{_list1.Id}: {_list1.Name} which contain : {_list1.Count} song(s)!");   // display list
             Console.WriteLine($"{_list2.Id}: {_list2.Name} which contain : {_list2.Count} song(s)!");
             Console.WriteLine($"{_list3.Id}: {_list3.Name} which contain : {_list3.Count} song(s)!");
             switch (Console.ReadLine()) // Read input and case it or reject it
@@ -150,7 +153,7 @@ namespace Examen1App
                     return false;
                 case "quit":
                     Environment.Exit(0);
-                    return false;
+                    return true;
                     
 
                 default: // In case something bad happen aka wrong input
