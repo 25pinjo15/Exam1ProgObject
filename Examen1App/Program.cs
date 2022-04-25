@@ -135,23 +135,17 @@ namespace Examen1App
                 case "1": // If 1 is entered, will display the proper list 
 
                     Console.Clear();
-                    Console.WriteLine(
-                        $"The playlist {_list1.Name} is {_list1.TotalLenghtFormated} long and contain :\n");
-                    Console.WriteLine($"{_list1}");
+                    _list1.DisplayAll();
                     EndOfFunction("Press enter to return to selector");
                     return true;
                 case "2": // If 2 is entered, will display the proper list 
                     Console.Clear();
-                    Console.WriteLine(
-                        $"The playlist {_list2.Name} is {_list2.TotalLenghtFormated} long and contain :\n");
-                    Console.WriteLine($"{_list2}");
+                   _list2.DisplayAll();
                     EndOfFunction("Press enter to return to selector");
                     return true;
                 case "3": // If 3 is entered, will display the proper list 
                     Console.Clear();
-                    Console.WriteLine(
-                        $"The playlist {_list3.Name} is {_list3.TotalLenghtFormated} long and contain :\n");
-                    Console.WriteLine($"{_list3}");
+                    _list3.DisplayAll();
                     EndOfFunction("Press enter to return to selector");
                     return true;
                 case "main": // Will return false to Main so it stop the prog

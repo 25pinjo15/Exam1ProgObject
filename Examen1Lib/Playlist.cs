@@ -80,6 +80,12 @@ public class Playlist
         Name = name;
     }
 
+    public void DisplayAll()
+    {
+        Console.WriteLine($"The playlist {Name} is {TotalLenghtFormated} long and contain :\n");
+        Console.WriteLine($"{ToString()}");
+    }
+
 // === Override ===
     public override bool Equals(object? obj)
     {
