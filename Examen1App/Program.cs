@@ -22,6 +22,7 @@ namespace Examen1App
         private static Playlist _list1;
         private static Playlist _list2;
         private static Playlist _list3;
+        private static List<Playlist> _listOfList;
 
 
         //  === Assing value to the proper object ===
@@ -56,13 +57,18 @@ namespace Examen1App
             _list3.Songlist.Add(_song10);
             _list3.Songlist.Add(_song11);
             _list3.Songlist.Add(_song12);
+
+            _listOfList = new List<Playlist>();
+            _listOfList.Add(_list1);
+            _listOfList.Add(_list2);
+            _listOfList.Add(_list3);
         }
 
 
         static void Main()
         {
             DataSetup(); // Initialize all data for the program
-            Console.OutputEncoding = System.Text.Encoding.UTF8; // Display special caracter
+           
             bool showMain = true; // Set showmain to true so the loop can run
             while (showMain) // = while true since showMain is bool
             {
@@ -81,7 +87,7 @@ namespace Examen1App
                               "*******************************************");
             switch (Console.ReadLine()) // Read input and case it or reject it
             {
-                case "1": // If 2 is entered, will point to the number 2 program
+                case "1": // If 1 is entered, will point to playlist selector
                     bool showPlayer = true; // Set showmain to true so the loop can run
                     while (showPlayer) // = while true since showMain is bool
                     {
@@ -115,12 +121,18 @@ namespace Examen1App
                               "|Hello enter a choice or type (main) to   |\n" +
                               "|exit to the main menu or (quit) to end   |\n" +
                               "*******************************************");
-            Console.WriteLine($"{_list1.Id}: {_list1.Name} which contain : {_list1.Count} song(s)!"); // display list
-            Console.WriteLine($"{_list2.Id}: {_list2.Name} which contain : {_list2.Count} song(s)!");
-            Console.WriteLine($"{_list3.Id}: {_list3.Name} which contain : {_list3.Count} song(s)!");
+            
+            // Display all the playlist in the list of playlist
+            foreach (Playlist playlist in _listOfList)
+            {
+                Console.WriteLine($"{playlist.Id}: {playlist.Name} which contain : {playlist.Count} song(s)!");
+            }
+            
+            
+            
             switch (Console.ReadLine()) // Read input and case it or reject it
             {
-                case "1": // If 1 is entered, will point to the number 1 program
+                case "1": // If 1 is entered, will display the proper list 
 
                     Console.Clear();
                     Console.WriteLine(
@@ -128,14 +140,14 @@ namespace Examen1App
                     Console.WriteLine($"{_list1}");
                     EndOfFunction("Press enter to return to selector");
                     return true;
-                case "2": // If 2 is entered, will point to the number 2 program
+                case "2": // If 2 is entered, will display the proper list 
                     Console.Clear();
                     Console.WriteLine(
                         $"The playlist {_list2.Name} is {_list2.TotalLenghtFormated} long and contain :\n");
                     Console.WriteLine($"{_list2}");
                     EndOfFunction("Press enter to return to selector");
                     return true;
-                case "3": // If 3 is entered, will point to the number 1 program
+                case "3": // If 3 is entered, will display the proper list 
                     Console.Clear();
                     Console.WriteLine(
                         $"The playlist {_list3.Name} is {_list3.TotalLenghtFormated} long and contain :\n");
@@ -155,35 +167,7 @@ namespace Examen1App
             }
         }
 
-        public static int UserNumberInput(string texte = "")
-        {
-            // === Variable declaration
-            int output = 0; // Used for input output purpose
-            bool tryParse = false; // Used for the loop to make sure its a number 
-            // === Function main
-
-            do
-            {
-                Console.Write(texte); // Write asked text
-                tryParse = int.TryParse(Console.ReadLine(), out output); // Try to parse the input 
-            } while (tryParse != true); // If try parse success ... continue
-
-            return (output);
-        }
-
-        public static string UserStringInput(string texte = "")
-        {
-            // === Variable declaration
-            string output = null; // Used for I/O purpose
-            // === Function main
-
-
-            Console.Write(texte);
-            output = Console.ReadLine();
-
-            return output;
-        }
-
+        
         private static void EndOfFunction(string message)
         {
             Console.WriteLine(message); // 
