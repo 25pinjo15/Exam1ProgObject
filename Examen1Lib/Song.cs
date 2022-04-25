@@ -2,18 +2,18 @@
 
 public class Song
 {
-    // ---- Variable declaration ----
+    // === Variable declaration ===
     private string _title;
     private string _artist;
     private int _second;
     private double _minute;
-    
-    // ---- Parameter declaration -----
+
+    // === Parameter declaration ===
     public static int NextId { get; private set; } = 1;
-    
+
     public int Id { get; private set; }
-    
-    public string Title 
+
+    public string Title
     {
         get => _title;
         set
@@ -25,10 +25,9 @@ public class Song
 
             _title = value;
         }
-
     }
-    
-    public string Artist 
+
+    public string Artist
     {
         get => _artist;
         set
@@ -40,7 +39,6 @@ public class Song
 
             _artist = value;
         }
-
     }
 
     public int Second
@@ -60,18 +58,17 @@ public class Song
     public double Minute
     {
         get => _minute;
-        
+
         set
         {
             double tmpSecond = Second % 60;
             double tmpMinute = Second / 60;
 
             _minute = (tmpSecond / 100) + tmpMinute;
-
         }
     }
 
-    // ---- Constructor ----
+    // === Constructor ===
     public Song(string title, string artist, int second)
     {
         Id = NextId;
@@ -80,10 +77,9 @@ public class Song
         Artist = artist;
         Second = second;
         Minute = Second;
-
     }
 
-// ---- Override ----
+// === Override ===
     public override bool Equals(object? obj)
     {
         if (obj == null || this.GetType() != obj.GetType())
@@ -91,7 +87,7 @@ public class Song
             return false;
         }
 
-        Song other = (Song)obj;
+        Song other = (Song) obj;
         // return Name.Equals(other.Name) && Dob.Equals(other.Dob);
         return Id == other.Id;
     }
@@ -100,10 +96,10 @@ public class Song
     {
         int tmpSecond = Second % 60;
         int tmpMinute = Second / 60;
-        TimeSpan totalTime = new TimeSpan(0,tmpMinute, tmpSecond);
+        TimeSpan totalTime = new TimeSpan(0, tmpMinute, tmpSecond);
         string formattedTimeSpan = string.Format("{0:D2}:{1:D2}", totalTime.Minutes, totalTime.Seconds);
-        
-        
+
+
         return $"{Id}: {Title} ({Artist}) {formattedTimeSpan}";
     }
 }

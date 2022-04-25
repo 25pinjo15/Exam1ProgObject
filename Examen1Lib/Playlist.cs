@@ -2,16 +2,18 @@
 
 public class Playlist
 {
-    // ---- Variable declaration ----
+    // === Variable declaration ===
     private string _name;
     private int _numberOfSong;
-    
 
-    // ---- Parameter declaration -----
+
+    // === Parameter declaration === 
     public static int NextId { get; private set; } = 1;
 
     public int Id { get; private set; }
 
+
+    // You gessed it ! its the name of the playlist !!!
     public string Name
     {
         get => _name;
@@ -26,6 +28,8 @@ public class Playlist
         }
     }
 
+
+    // Count the number of song in the list
     public int Count
     {
         get
@@ -33,9 +37,10 @@ public class Playlist
             _numberOfSong = Songlist.Count;
             return _numberOfSong;
         }
-        
     }
-    
+
+
+    // Give total lenght in second
     public int TotalLenght
     {
         get
@@ -43,14 +48,15 @@ public class Playlist
             int tmp = 0;
             foreach (Song? song in Songlist)
             {
-
                 tmp += song.Second;
             }
+
             return tmp;
         }
-       
     }
 
+
+    // Will give a proper formated string mm:ss
     public string TotalLenghtFormated
     {
         get
@@ -63,9 +69,10 @@ public class Playlist
         }
     }
 
+
     public List<Song?> Songlist = new List<Song?>();
 
-    // ---- Constructor ----
+    // === Constructor ===
     public Playlist(string name)
     {
         Id = NextId;
@@ -73,7 +80,7 @@ public class Playlist
         Name = name;
     }
 
-// ---- Override ----
+// === Override ===
     public override bool Equals(object? obj)
     {
         if (obj == null || this.GetType() != obj.GetType())
@@ -94,7 +101,6 @@ public class Playlist
             int tmpI = 1;
             foreach (Song? song in Songlist)
             {
-                
                 tmp2 += ($"({tmpI}) = {song}\n");
                 tmpI++;
                 //return tmp;
@@ -102,7 +108,7 @@ public class Playlist
         }
         else
         {
-            return "empty";
+            return "The list is empty :'( ";
         }
 
         return tmp2;
